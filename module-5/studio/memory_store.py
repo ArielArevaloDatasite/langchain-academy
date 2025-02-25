@@ -1,12 +1,14 @@
 from langchain_core.messages import SystemMessage
 from langchain_core.runnables.config import RunnableConfig
-from langchain_openai import ChatOpenAI
+from langchain_openai import AzureChatOpenAI
+from dotenv import load_dotenv
+load_dotenv()
 from langgraph.graph import StateGraph, MessagesState, START, END
 from langgraph.store.base import BaseStore
 import configuration
 
 # Initialize the LLM
-model = ChatOpenAI(model="gpt-4o", temperature=0) 
+model = AzureChatOpenAI(model="gpt-4o", temperature=0)
 
 # Chatbot instruction
 MODEL_SYSTEM_MESSAGE = """You are a helpful assistant with memory that provides information about the user. 

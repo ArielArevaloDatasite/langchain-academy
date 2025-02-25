@@ -8,11 +8,13 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_community.document_loaders import WikipediaLoader
 from langchain_community.tools import TavilySearchResults
 
-from langchain_openai import ChatOpenAI
+from langchain_openai import AzureChatOpenAI
+from dotenv import load_dotenv
+load_dotenv()
 
 from langgraph.graph import StateGraph, START, END
 
-llm = ChatOpenAI(model="gpt-4o", temperature=0) 
+llm = AzureChatOpenAI(model="gpt-4o", temperature=0)
 
 class State(TypedDict):
     question: str

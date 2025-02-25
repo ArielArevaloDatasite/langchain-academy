@@ -1,4 +1,6 @@
-from langchain_openai import ChatOpenAI
+from langchain_openai import AzureChatOpenAI
+from dotenv import load_dotenv
+load_dotenv()
 from langgraph.graph import MessagesState
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -14,7 +16,7 @@ def multiply(a: int, b: int) -> int:
     return a * b
 
 # LLM with bound tool
-llm = ChatOpenAI(model="gpt-4o")
+llm = AzureChatOpenAI(model="gpt-4o")
 llm_with_tools = llm.bind_tools([multiply])
 
 # Node
