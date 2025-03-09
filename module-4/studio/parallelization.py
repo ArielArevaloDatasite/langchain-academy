@@ -9,8 +9,6 @@ from langchain_community.document_loaders import WikipediaLoader
 from langchain_community.tools import TavilySearchResults
 
 from langchain_openai import AzureChatOpenAI
-from dotenv import load_dotenv
-load_dotenv()
 
 from langgraph.graph import StateGraph, START, END
 

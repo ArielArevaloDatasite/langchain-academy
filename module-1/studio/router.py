@@ -1,6 +1,4 @@
 from langchain_openai import AzureChatOpenAI
-from dotenv import load_dotenv
-load_dotenv()
 from langgraph.graph import MessagesState
 from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition

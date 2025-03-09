@@ -12,8 +12,6 @@ from langchain_core.messages import merge_message_runs
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from langchain_openai import AzureChatOpenAI
-from dotenv import load_dotenv
-load_dotenv()
 
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import StateGraph, MessagesState, START, END
